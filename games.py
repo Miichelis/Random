@@ -4,9 +4,10 @@ import random
 print "Welcome To My Py Games"
 games=[1,2,3]
 restart=["yes","no"]
-type_of_game=input("For the Random Number Guesser type 1, for the Quiz game type 2 and for rock paper scissors type 3 ")
+cpu=["rock","paper","scissors"]
+type_of_game=input("For the Random Number Guesser game type 1, For the Quiz game type 2 and for Rock Paper Scissors type 3 ")
 while type_of_game not in games:
-    type_of_game=input("For the Random Number Guesser type 1, for the Quiz game type 2 and for rock paper scissors type 3 ")
+    type_of_game=input("For the Random Number Guesser game type 1, For the Quiz game type 2 and for Rock Paper Scissors type 3 ")
 
 def random_number_guesser():
     run=True
@@ -44,6 +45,7 @@ def random_number_guesser():
                     run=True
         elif playagain=="no":
                 run=False
+        rndmnumber()
         print "Thanks for playing!"
            
 
@@ -87,16 +89,16 @@ def quiz():
                 run=True
         elif playagain=="no":
                 run=False
+        quizz()
         print "Thanks for playing!"
+        
 
 def rock_paper_scissors():
     run=True
     while run == True:
-        cpu=["rock","paper","scissors"]
         choice_of_cpu=random.choice(cpu)
 
-        player="nooptionselected"
-
+        player=raw_input("Pick rock,paper,scissors: ").lower()
         while player not in cpu:
             player=raw_input("Pick rock,paper,scissors: ").lower()
 
@@ -130,15 +132,70 @@ def rock_paper_scissors():
             run=True
         if playagain=="no":
             run=False
-        print "Thanks for playing!"
+            rps()
+            print "Thanks for playing!"
+
+
+            
+def rps():
+    other_game=raw_input("Do you wanna play any other game?('yes/no')").lower()
+    while other_game not in restart:
+        other_game=raw_input("Do you wanna play any other game?('yes/no')").lower()
+    if other_game=="yes":
+        whichgame=input("For the Random Number Guesser game type 1 and for the Quiz game type 2 ")
+        while whichgame != 1 and whichgame != 2:
+            whichgame=input("For the Random Number Guesser game type 1 and for the Quiz game type 2 ")   
+        if whichgame == 1:
+            random_number_guesser()
+        else:
+            quiz()
+def rndmnumber():
+    other_game=raw_input("Do you wanna play any other game?('yes/no')").lower()
+    while other_game not in restart:
+        other_game=raw_input("Do you wanna play any other game?('yes/no')").lower()
+    if other_game=="yes":
+        whichgame=input("For the Quiz game type 1 and for Rock Paper Scissors game type 2 ")
+        while whichgame != 1 and whichgame != 2:
+            whichgame=input("For the Random Number Guesser game type 1 and for the Quiz game type 2 ")   
+        if whichgame == 1:
+            quiz()
+        else:
+            rock_paper_scissors()
+def quizz():
+    other_game=raw_input("Do you wanna play any other game?('yes/no')").lower()
+    while other_game not in restart:
+        other_game=raw_input("Do you wanna play any other game?('yes/no')").lower()
+    if other_game=="yes":
+        whichgame=input("For the Random Number Guesser game type 1 and for Rock Paper Scissors game type 2 ")
+        while whichgame != 1 and whichgame != 2:
+            whichgame=input("For the Random Number Guesser game type 1 and for Rock Paper Scissors game type 2 ")   
+        if whichgame == 1:
+            rndmnumber()
+        else:
+            rps()
 
 
 
-def gamesplay():
+def gamesplay():  
     if type_of_game==1:
-        random_number_guesser()
+        random_number_guesser()        
     elif type_of_game==2:
-        quiz()
-    else:
+        quiz()       
+    elif type_of_game==3:
         rock_paper_scissors()
+        
+
 gamesplay()
+
+
+
+
+
+
+
+
+
+
+
+
+
