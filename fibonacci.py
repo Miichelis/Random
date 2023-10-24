@@ -13,5 +13,4 @@ def fibonacci(n):
             return s
         else:
             print s
-f=fibonacci(100)
-print f
+
