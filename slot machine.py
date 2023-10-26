@@ -187,7 +187,7 @@ while start == True:
             finish_game=raw_input("Do you want to finish the game?(Y/N) ")
             while finish_game not in ["Y","N"]:
                 finish_game=raw_input("Do you want to finish the game?(Y/N) ")
-                if finish_game == "Y":
-                    start=False
+            if finish_game == "Y":
+                start=False
         
 
