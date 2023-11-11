@@ -46,27 +46,4 @@ while flag == 0:
         flag=1
 print(passwd)        
 
-#Tester
-'''
-if has_upper(passwd) == True:
-    print("Exei uppercase")
-else:
-    print("den exei uppercase ")
 
-if has_lower(passwd) == True:
-    print("Exei lowercase")
-else:
-    print("den exei lowercase")
-
-if has_nums(passwd) == True:
-    print("Exei numbers")
-else:
-    print("den exei numbers ")
-
-
-if has_symbols(passwd) == True:
-    print("Exei symbols")
-else:
-    print("den exei symbols")
-
-'''
