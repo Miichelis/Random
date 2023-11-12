@@ -5,14 +5,9 @@ start=True
 fruits=[[],
         [],
         []]
-
-
-
 for i in range(3):
     for j in range(3):
         fruits[i].append(random.choice(random_things))
-
-
 
 def lucky(fruits):
     winning_line=[]
@@ -36,12 +31,7 @@ def money_earned(fruits):
             multiplier=3
         else:
             multiplier=1
-  
-
-   
     return multiplier
-
-    
 
 def actual_programm(user_deposit,winner,mult,fruits):
     while start==True:
